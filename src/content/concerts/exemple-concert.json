@@ -1,0 +1,22 @@
+{
+  "titre": "Soirée Garage Psych",
+  "date": "2026-06-20T20:00:00",
+  "lieu": "Le Ferrailleur, Nantes",
+  "affiche": "/images/soiree-garage.jpg",
+  "artiste": "The Liminanas",
+  "genres": ["Garage Rock", "Psychedelic"],
+  "media": {
+    "bandcamp": "https://bandcamp.com/EmbeddedPlayer/album=123456/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/",
+    "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "soundcloud": ""
+  },
+  "reseaux": {
+    "site_web": "https://theliminanas.com",
+    "instagram": "https://instagram.com/theliminanas",
+    "facebook": "https://facebook.com/theliminanas",
+    "spotify": "https://open.spotify.com/artist/example",
+    "deezer": "",
+    "qobuz": "",
+    "linktree": "https://linktr.ee/theliminanas"
+  }
+}
