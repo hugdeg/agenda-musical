@@ -1,0 +1,40 @@
+---
+import ConcertCard from '../components/ConcertCard.astro';
+
+// Récupère tous les fichiers JSON du dossier src/content/concerts/
+const concertFiles = import.meta.glob('../content/concerts/*.json', { eager: true });
+const concerts = Object.values(concertFiles);
+---
+
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Agenda Musical</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8fafc; color: #0f172a; margin: 0; padding: 20px; }
+    header { max-width: 600px; margin: 0 auto 30px auto; text-align: center; }
+    h1 { font-size: 28px; font-weight: 800; color: #0284c7; margin-bottom: 8px; }
+    p { color: #64748b; font-size: 15px; }
+    .container { max-width: 600px; margin: 0 auto; }
+    .btn-submit { display: inline-block; background: #0284c7; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Agenda Musical</h1>
+    <p>Les prochains concerts et festivals à ne pas rater.</p>
+    <a href="/submit.html" class="btn-submit">➕ Ajouter un concert</a>
+  </header>
+
+  <main class="container">
+    {concerts.length === 0 ? (
+      <p style="text-align:center;">Aucun concert pour le moment. Ajoute le premier !</p>
+    ) : (
+      concerts.map((concert: any) => (
+        <ConcertCard concert={concert} />
+      ))
+    )}
+  </main>
+</body>
+</html>
